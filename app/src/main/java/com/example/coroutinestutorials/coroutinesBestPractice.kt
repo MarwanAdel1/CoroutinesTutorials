@@ -5,6 +5,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.concurrent.thread
 import kotlin.coroutines.resume
+import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
 
 fun main() {
@@ -35,6 +36,9 @@ fun main() {
 //        println(readFileSuspend("Marwan"))
 //    }
 
+    GlobalScope.launch {
+        println(readFileSuspend(null))
+    }
 
     Thread.sleep(5000)
 }
@@ -149,13 +153,17 @@ suspend fun getUserSuspend(userId: String): User {
     return User(userId, "Filip")
 }
 
-suspend fun readFileSuspend(path: String): String =
+suspend fun readFileSuspend(path: String?): String =
     suspendCoroutine {
         readData(path) { file ->
-            it.resume(file)  //// resume with exception ----
+            try {
+                it.resume(file!!)  //// resume with exception ----
+            }catch (error: Throwable){
+                it.resumeWithException(error)
+            }
         }
     }
 
-private fun readData(someString: String, value: (String) -> Unit) {
+private fun readData(someString: String?, value: (String?) -> Unit) {
     value(someString)
 }
