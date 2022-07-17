@@ -7,9 +7,17 @@ t
 Dapp/src/test/java/com/example/coroutinestutorials/ExampleUnitTest.kt,c\c\cc479db24102dd4d6f5a6fe29e3ff6250925e2a3
 ƒ
 Sapp/src/androidTest/java/com/example/coroutinestutorials/ExampleInstrumentedTest.kt,1\a\1a3c4b8a2c8dfa8cdce951aab66f82dd802c0202
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 >
 app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
 i
 9app/src/main/java/com/example/coroutinestutorials/User.kt,e\1\e15e9bb6f578e6a2b2b4c12db63e10a6f13b9521
+q
+Aapp/src/main/java/com/example/coroutinestutorials/MainActivity.kt,b\1\b10d81dfaa5557b38fa2e15b07374f6150db58de
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+{
+Kapp/src/main/java/com/example/coroutinestutorials/coroutinesBestPractice.kt,0\f\0f03d546deb815cde9cc0d4b886a65775374919e
+9
+	users.txt,f\9\f93ae4f67f83f844c35484f27fe1ba4244266c9a
+ƒ
+Sapp/src/main/java/com/example/coroutinestutorials/ch_five_async_await/AsyncAwait.kt,d\0\d0bb71536083cff52f74ca5784c110a625c59ac0

@@ -43,8 +43,8 @@ fun main() {
             println("Not found in file!!!!!!!!")
         }
     }
-
-    scope.onStop()
+    
+//    scope.onStop()
 
     Thread.sleep(5000)
     //launch.cancel()
