@@ -1,5 +1,6 @@
 package com.example.coroutinestutorials
 
+import CustomScope
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
