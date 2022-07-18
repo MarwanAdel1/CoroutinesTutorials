@@ -31,6 +31,9 @@ fun main() {
 
     val userId = 992 //992555
     scope.launch {
+        println("Test Deffered: ${getUserByIdFromNetwork(userId, scope).isActive}")
+        println("Test Deffered: ${getUserByIdFromNetwork(userId, scope).isCompleted}")
+
         val userDeferred = getUserByIdFromNetwork(userId, scope).await()
         val usersFromFileDeferred = readUsersFromFile("users.txt", scope).await()
         println("Finding user")
@@ -42,6 +45,18 @@ fun main() {
         } else {
             println("Not found in file!!!!!!!!")
         }
+
+//
+//        val x = getUserByIdFromNetwork(userId, scope)
+//        println("Test Deffered: ${x.isActive}")
+//        println("Test Deffered: ${x.isCompleted}")
+//
+//        val userDeferred = x.await()
+//        val usersFromFileDeferred = readUsersFromFile("users.txt", scope).await()
+//        println("Finding user")
+//
+//        println("Test Deffered: ${x.isActive}")
+//        println("Test Deffered: ${x.isCompleted}")
     }
     
 //    scope.onStop()
@@ -65,7 +80,7 @@ private suspend fun getUserByIdFromNetwork(
         delay(3000)
         println("Still in the coroutine")
 
-        User(userId, "Filip", "Babic") // we simulate the network call
+        return@async User(userId, "Filip", "Babic") // we simulate the network call
     }
 
 data class User(val id: Int, val name: String, val lastName: String)
